@@ -10,16 +10,17 @@ const memeUrl = request('https://memegen.link/examples', function (
   const $ = cheerio.load(body);
   const elements = $('.row a');
 
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 10; i++) {
     const url = 'https://memegen.link/';
 
     const links =
-      url + elements[i].attribs.href.replace(/[']/g, '').split('?')[0];
+      url + elements[i].attribs.href.split('?')[0].replace(/[']/g, '');
 
     imageDownloader({
       imgs: [
         {
           uri: links,
+          filename: '0' + i,
         },
       ],
       dest: './memes',
