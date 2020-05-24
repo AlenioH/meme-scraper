@@ -3,7 +3,7 @@ const imageDownloader = require('node-image-downloader');
 const cheerio = require('cheerio');
 const fs = require('fs');
 
-//the function checks if the fir alrrady exists, if it doen't the function creates one
+//the function checks if the dir already exists, if it doesn't the function creates one
 fs.exists('./memes', function (exists) {
   if (!exists) {
     fs.mkdirSync('./memes');
